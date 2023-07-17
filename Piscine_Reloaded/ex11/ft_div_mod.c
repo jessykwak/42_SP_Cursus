@@ -1,38 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_div_mod.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/17 16:44:46 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/07/17 18:57:01 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/07/12 14:26:35 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/07/12 14:39:21 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+void	ft_div_mod(int a, int b, int *div, int *mod)
 {
-	int	index;
-	int	param;
-
-	index = 0;
-	param = 1;
-	if (argc <= 1)
-		return (1);
-	while (param != argc)
+	if (b != 0)
 	{
-		while (argv[param][index] != '\0')
-		{
-			ft_putchar(argv[param][index]);
-			index++;
-		}
-		ft_putchar('\n');
-		index = 0;
-		param++;
+		*div = a / b;
+		*mod = a % b;
 	}
-	return (0);
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	int	a;
+	int	b;
+	int	c;
+	int	d;
+
+	a = 5;
+	b = 0;
+	c = 11;
+	d = 11;
+	ft_div_mod(a, b, &c, &d);
+	printf("%d/%d = %d e resto %d", a, b, c, d);
+	return (0);
+} */

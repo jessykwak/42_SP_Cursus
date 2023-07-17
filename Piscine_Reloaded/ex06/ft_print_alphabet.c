@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_print_alphabet.c                                :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/17 16:44:46 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/07/17 18:57:01 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/07/11 19:46:00 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/07/17 16:52:20 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,25 +14,20 @@
 
 void	ft_putchar(char c);
 
-int	main(int argc, char **argv)
+void	ft_print_alphabet(void)
 {
-	int	index;
-	int	param;
+	char	letter;
 
-	index = 0;
-	param = 1;
-	if (argc <= 1)
-		return (1);
-	while (param != argc)
+	letter = 'a';
+	while (letter <= 'z')
 	{
-		while (argv[param][index] != '\0')
-		{
-			ft_putchar(argv[param][index]);
-			index++;
-		}
-		ft_putchar('\n');
-		index = 0;
-		param++;
+		ft_putchar(letter);
+		letter++;
 	}
-	return (0);
 }
+
+/* int	main(void)
+{
+	ft_print_alphabet();
+	return (0);
+} */

@@ -1,38 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_swap.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/17 16:44:46 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/07/17 18:57:01 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/07/12 14:18:22 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/07/17 17:04:12 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+void	ft_swap(int *a, int *b)
 {
-	int	index;
-	int	param;
+	int	aux;
 
-	index = 0;
-	param = 1;
-	if (argc <= 1)
-		return (1);
-	while (param != argc)
-	{
-		while (argv[param][index] != '\0')
-		{
-			ft_putchar(argv[param][index]);
-			index++;
-		}
-		ft_putchar('\n');
-		index = 0;
-		param++;
-	}
-	return (0);
+	aux = *a;
+	*a = *b;
+	*b = aux;
 }
+
+/* #include <stdio.h>
+
+int	main(void)
+{
+	int a;
+	int b;
+
+	a = 0;
+	b = 1;
+	printf("a = %d, b = %d \n", a, b);
+	ft_swap(&a, &b);
+	printf("a = %d, b = %d", a, b);214214214
+	return (0);
+} */

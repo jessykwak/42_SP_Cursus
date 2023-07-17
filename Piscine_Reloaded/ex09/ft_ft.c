@@ -1,38 +1,28 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_print_params.c                                  :+:      :+:    :+:   */
+/*   ft_ft.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/17 16:44:46 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/07/17 18:57:01 by jmin-kwa         ###   ########.fr       */
+/*   Created: 2023/07/12 12:36:03 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/07/12 12:53:28 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-
-void	ft_putchar(char c);
-
-int	main(int argc, char **argv)
+void	ft_ft(int *nbr)
 {
-	int	index;
-	int	param;
-
-	index = 0;
-	param = 1;
-	if (argc <= 1)
-		return (1);
-	while (param != argc)
-	{
-		while (argv[param][index] != '\0')
-		{
-			ft_putchar(argv[param][index]);
-			index++;
-		}
-		ft_putchar('\n');
-		index = 0;
-		param++;
-	}
-	return (0);
+	*nbr = 42;
 }
+
+// #include <stdio.h>
+
+// int	main(void)
+// {
+// 	int nbr;
+
+// 	nbr = 52;
+// 	ft_ft(&nbr);
+// 	printf("%d", nbr);
+// 	return (0);
+// }
