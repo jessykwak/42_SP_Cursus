@@ -6,11 +6,11 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/17 17:32:30 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/07/17 18:56:53 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/07/21 21:38:56 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
+/* #include <stdio.h> */
 #include <stdlib.h>
 
 int	*ft_range(int min, int max)
@@ -22,7 +22,7 @@ int	*ft_range(int min, int max)
 	index = 0;
 	size = max - min;
 	list = (int *)malloc(sizeof(int) * (size));
-	if (list != NULL)
+	if (min < max)
 	{
 		while (min < max)
 		{
