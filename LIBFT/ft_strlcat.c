@@ -11,35 +11,45 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-
-size_t	ft_strlen(const char *s);
+// #include <string.h>
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	lendest;
 	size_t	index;
+	size_t	count;
 
-	lendest = ft_strlen(dst);
 	index = 0;
+	while(dst[index] != '\0')
+		index++;
+	lendest = index;
 	if (size <= lendest)
-		return (size + ft_strlen(src));
-	while (src[index] && ((lendest + index) < (size - 1)))
+	{
+		count = 0;
+		while(src[count] != '\0')
+			count++;
+		return (size + count);
+	}
+	index = 0;
+	while (((lendest + index) < (size - 1)) && src[index] != '\0')
 	{
 		dst[lendest + index] = src[index];
 		index++;
 	}
 	dst[lendest + index] = '\0';
-	return (ft_strlen(dst));
+	return (lendest + index);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
 	char dest[16] = "to com fome";
 	char src[13] = " quero leite";
 
+	printf("%u", strlcat(dest, src, 10));
+	printf("\n%s", dest);
 	printf("%zu", ft_strlcat(dest, src, 10));
 	printf("\n%s", dest);
 	return (0);
-}
+} */

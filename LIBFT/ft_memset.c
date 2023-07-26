@@ -12,7 +12,27 @@
 
 #include <string.h>
 
-void	*ft_memset(void *s, int c, size_t n)
+void *ft_memset(void *ptr, int value, size_t num)
 {
-	
+    size_t index;
+
+    index = 0;
+    while (index < num)
+    {
+        ((unsigned char *)ptr)[index] = ((unsigned char)value);
+        index++;
+    }
+    return (ptr);
+}
+
+#include <stdio.h>
+
+int main(void)
+{
+    char buffer[10] = "arroz";
+
+    printf("Buffer after memset: \"%p\"\n", memset(buffer, 0, sizeof(buffer)));
+    printf("Buffer after memset: \"%p\"\n", ft_memset(buffer, 0, sizeof(buffer)));
+
+    return 0;
 }

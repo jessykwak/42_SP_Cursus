@@ -11,9 +11,28 @@
 /* ************************************************************************** */
 
 #include "libft.h"
+/* #include <stdio.h>
+#include <string.h> */
 
-size_t	ft_strlcpy(char *dst, const char *src, size_t size)
+size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
+	size_t len;
+	size_t index;
+
+	len = 0;
+	index = 0;
+	while (src[len] != '\0')
+		len++;
+	while (index < (size - 1) && size > 0 && src[index] != '\0')
+	{
+		dst[index] = src[index];
+		index++;
+	}
+	dst[index] = '\0';
+	return (len);
+}
+
+/* {
 	size_t	count;
 	size_t	index;
 
@@ -31,4 +50,13 @@ size_t	ft_strlcpy(char *dst, const char *src, size_t size)
 	}
 	dst[index] = '\0';
 	return (count);
+} */
+
+int main(void)
+{
+	const char *source = "Hello, world!";
+	char destination[10];
+
+	printf("%zd", strlcpy(destination, source, sizeof(destination)));
+	printf("%zd", ft_strlcpy(destination, source, sizeof(destination)));
 }
