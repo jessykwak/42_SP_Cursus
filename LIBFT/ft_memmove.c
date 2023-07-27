@@ -12,7 +12,25 @@
 
 #include <string.h>
 
-void	*ft_memmove(void *dest, const void *src, size_t n)
+void *ft_memmove(void *dest, const void *src, size_t n)
 {
-	
+    unsigned char *dest_a;
+    const unsigned char *src_a;
+
+    dest_a = dest;
+    src_a = src;
+    while (n--)
+    {
+        *dest_a = *src_a;
+        dest_a--;
+        src_a--;
+    }
+    while (n--)
+    {
+        *dest_a = *src_a;
+        dest_a++;
+        src_a++;
+    }
+
+    return (dest);
 }
