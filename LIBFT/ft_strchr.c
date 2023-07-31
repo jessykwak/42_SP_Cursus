@@ -10,3 +10,38 @@
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <string.h>
+
+char *ft_strchr(const char *s, int c)
+{
+    char *str;
+
+    str = (char *)s;
+    while (*str)
+    {
+        if (*str == c)
+            break;
+        str++;
+    }
+    if (*str != c)
+        return (NULL);
+    return (str);
+}
+
+#include <stdio.h>
+
+int main (void)
+{
+    const char *str = "Hello, World!";
+    char search = '@';
+
+    if (((ft_strchr(str, search)) != NULL) && ((strchr(str, search)) != NULL)) 
+    {
+        printf("'%c' found: %ld\n", search, ft_strchr(str, search) - str);
+        printf("'%c' found: %ld\n", search, strchr(str, search) - str);
+    } 
+    else 
+    {
+        printf("'%c' not found.\n", search);
+    }
+}

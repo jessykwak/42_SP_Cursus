@@ -14,23 +14,34 @@
 
 void *ft_memmove(void *dest, const void *src, size_t n)
 {
+    size_t  count;
     unsigned char *dest_a;
     const unsigned char *src_a;
 
     dest_a = dest;
     src_a = src;
-    while (n--)
-    {
-        *dest_a = *src_a;
-        dest_a--;
-        src_a--;
-    }
-    while (n--)
+    count = 0;
+    while (count < n)
     {
         *dest_a = *src_a;
         dest_a++;
         src_a++;
+        count++;
     }
 
     return (dest);
+}
+
+#include <stdio.h>
+
+int main() 
+{
+    char source[] = "Hello, World!";
+    char destination[] = "Hello, Universe!";
+
+    ft_memmove(destination+16, source+6, 7);
+    printf("Source: %s\n", source);
+    printf("Destination: %s\n", destination);
+
+    return 0;
 }
