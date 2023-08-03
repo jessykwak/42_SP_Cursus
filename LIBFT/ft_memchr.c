@@ -1,4 +1,4 @@
-#include <string.h>
+#include "libft.h"
 
 void *ft_memchr(const void *s, int c, size_t n)
 {
@@ -20,7 +20,7 @@ void *ft_memchr(const void *s, int c, size_t n)
     return (&str[count]);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main (void)
 {
@@ -29,4 +29,4 @@ int main (void)
     str = "Monkey's banana!";
     printf("%p\n", ft_memchr(str, 'H', 16));
     printf("%p\n", memchr(str, 'H', 16));
-}
+} */

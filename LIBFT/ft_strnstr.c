@@ -1,4 +1,4 @@
-#include <string.h>
+#include "libft.h"
 
 char    *ft_strnstr (const char *big, const char *little, size_t len)
 {
@@ -26,7 +26,7 @@ char    *ft_strnstr (const char *big, const char *little, size_t len)
     return (NULL);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main(void) 
 {
@@ -43,4 +43,4 @@ int main(void)
     }
 
     return (0);
-}
+} */

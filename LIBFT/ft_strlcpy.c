@@ -11,8 +11,6 @@
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h>
-#include <string.h> */
 
 size_t ft_strlcpy(char *dst, const char *src, size_t size)
 {
@@ -32,25 +30,7 @@ size_t ft_strlcpy(char *dst, const char *src, size_t size)
 	return (len);
 }
 
-/* {
-	size_t	count;
-	size_t	index;
-
-	count = 0;
-	while (src[count] != '\0')
-		count++;
-	index = 0;
-	if (size > 0)
-	{
-		while (index < (size - 1) && src[index] != '\0')
-		{
-			dst[index] = src[index];
-			index++;
-		}
-	}
-	dst[index] = '\0';
-	return (count);
-} */
+/* #include <stdio.h>
 
 int main(void)
 {
@@ -59,4 +39,4 @@ int main(void)
 
 	printf("%zd", strlcpy(destination, source, sizeof(destination)));
 	printf("%zd", ft_strlcpy(destination, source, sizeof(destination)));
-}
+} */

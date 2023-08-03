@@ -1,4 +1,4 @@
-#include <stdlib.h>
+#include "libft.h"
 
 void *ft_calloc(size_t nmemb, size_t size)
 {
@@ -22,7 +22,7 @@ void *ft_calloc(size_t nmemb, size_t size)
     return (array);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main(void) 
 {
@@ -45,4 +45,4 @@ int main(void)
     }
 
     return (0);
-}
+} */

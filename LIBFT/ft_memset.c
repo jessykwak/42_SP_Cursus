@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 void *ft_memset(void *ptr, int value, size_t num)
 {
@@ -25,7 +25,7 @@ void *ft_memset(void *ptr, int value, size_t num)
     return (ptr);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main(void)
 {
@@ -35,4 +35,4 @@ int main(void)
     printf("Buffer after memset: \"%p\"\n", ft_memset(buffer, 0, sizeof(buffer)));
 
     return 0;
-}
+} */

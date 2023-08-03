@@ -10,8 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
-#include <stdio.h>
+#include "libft.h"
 
 void	*ft_memcpy(void *dest, const void *src, size_t n)
 {
@@ -30,7 +29,10 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
     return (dest);
 }
 
-int main() {
+/* #include <stdio.h>
+
+int main() 
+{
     char source[] = "Bye, Universe!";
     char destination[29] = "     Hello, Universe!";
 
@@ -44,4 +46,4 @@ int main() {
     printf("Source: %s\n", source);
     printf("Destination: %s\n", destination);
     return (0);
-}
+} */

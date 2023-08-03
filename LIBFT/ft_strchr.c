@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include "libft.h"
 
 char *ft_strchr(const char *s, int c)
 {
@@ -28,7 +28,7 @@ char *ft_strchr(const char *s, int c)
     return (str);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int main (void)
 {
@@ -44,4 +44,4 @@ int main (void)
     {
         printf("'%c' not found.\n", search);
     }
-}
+} */

@@ -1,19 +1,18 @@
-#include <stdlib.h>
+#include "libft.h"
 
 int ft_atoi(const char *nptr)
 {
-	int	index;
-	int	sign;
-	int	num;
+	int index;
+	int sign;
+	int num;
 
 	sign = 1;
 	index = 0;
-    if (nptr[0] == '\0')
-    {
-        return (0);
-    }
-	while (!(nptr[index] == '+') && !(nptr[index] == '-') 
-            && !(nptr[index] >= '0' && nptr[index] <= '9'))
+	if (nptr[0] == '\0')
+	{
+		return (0);
+	}
+	while (!(nptr[index] == '+') && !(nptr[index] == '-') && !(nptr[index] >= '0' && nptr[index] <= '9'))
 		index++;
 	num = 0;
 	while (nptr[index] == '-' || nptr[index] == '+')
@@ -32,11 +31,13 @@ int ft_atoi(const char *nptr)
 
 #include <stdio.h>
 
-int main()
+int main(void)
 {
-    const char *str = "214748364981";
+	const char *str = "21474";
+	int num;
 
-    printf("Converted integer: %d\n", ft_atoi(str));
+	num = ft_atoi(str);
+	printf("Converted integer: %d\n", num);
 
-    return (0);
+	return (0);
 }

@@ -10,7 +10,7 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-int	ft_toupper(int c)
+int ft_toupper(int c)
 {
 	if (c >= 97 && c <= 122)
 		return (c - 32);
@@ -18,7 +18,7 @@ int	ft_toupper(int c)
 		return (c);
 }
 
-#include <stdio.h>
+/* #include <stdio.h>
 
 int	main(void)
 {
@@ -27,3 +27,4 @@ int	main(void)
 	printf("%d\n", ft_toupper(3));
 	return (0);
 }
+ */
