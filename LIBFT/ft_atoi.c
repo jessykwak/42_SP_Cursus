@@ -29,9 +29,7 @@ int ft_atoi(const char *nptr)
 	return (num * sign);
 }
 
-#include <stdio.h>
-
-int main(void)
+/* int main(void)
 {
 	const char *str = "21474";
 	int num;
@@ -40,4 +38,4 @@ int main(void)
 	printf("Converted integer: %d\n", num);
 
 	return (0);
-}
+} */
