@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strnstr.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/04 00:00:49 by jessk             #+#    #+#             */
+/*   Updated: 2023/08/04 00:00:59 by jessk            ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strnstr(const char *big, const char *little, size_t len)
@@ -18,8 +30,7 @@ char	*ft_strnstr(const char *big, const char *little, size_t len)
 		while (big[count + index] == little[index] && (count + index) < len)
 		{
 			if (index == lil_len - 1)
-				return ((char *)(big + count));
-			index++;
+				index++;
 		}
 		count++;
 	}
