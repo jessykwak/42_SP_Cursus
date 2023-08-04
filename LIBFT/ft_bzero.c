@@ -6,7 +6,7 @@
 /*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 20:45:51 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/03 01:24:03 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/03 01:54:00 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,18 @@ void ft_bzero(void *s, size_t n)
 	index = 0;
 	while (index < n)
 	{
-		((unsigned char *)s)[index] = '\0';
+		((unsigned char *)s)[index] = 0;
 		index++;
 	}
 }
+
+/* int main(void)
+{
+	char str[] = "WOT THE ACTUAL FORK";
+
+	printf("%s\n", str);
+	ft_bzero(str, 3);
+	printf("%s\n", str);
+
+	return (0);
+} */
