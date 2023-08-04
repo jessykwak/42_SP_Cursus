@@ -1,10 +1,10 @@
 #include "libft.h"
 
-char *ft_strdup(const char *s)
+char	*ft_strdup(const char *s)
 {
-	char *dup;
-	size_t len;
-	size_t index;
+	char	*dup;
+	size_t	len;
+	size_t	index;
 
 	while (s[len] != '\0')
 		len++;
@@ -22,7 +22,7 @@ char *ft_strdup(const char *s)
 
 /* #include <stdio.h>
 
-int main() {
+int	main(void) {
 	const char *str1 = "Noice, Toit";
 	char *dup = ft_strdup(str1);
 
@@ -36,5 +36,5 @@ int main() {
 		printf("Memory allocation failed!\n");
 	}
 
-	return 0;
+	return (0);
 } */

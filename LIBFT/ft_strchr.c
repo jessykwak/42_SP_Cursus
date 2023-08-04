@@ -3,45 +3,45 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 22:09:50 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/07/24 22:23:14 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/03 23:58:16 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char *ft_strchr(const char *s, int c)
+char	*ft_strchr(const char *s, int c)
 {
-    char *str;
+	char	*str;
 
-    str = (char *)s;
-    while (*str)
-    {
-        if (*str == c)
-            break;
-        str++;
-    }
-    if (*str != c)
-        return (NULL);
-    return (str);
+	str = (char *)s;
+	while (*str)
+	{
+		if (*str == c)
+			break ;
+		str++;
+	}
+	if (*str != c)
+		return (NULL);
+	return (str);
 }
 
 /* #include <stdio.h>
 
 int main (void)
 {
-    const char *str = "Hello, World!";
-    char search = '@';
+	const char *str = "Hello, World!";
+	char search = '@';
 
-    if (((ft_strchr(str, search)) != NULL) && ((strchr(str, search)) != NULL)) 
-    {
-        printf("'%c' found: %ld\n", search, ft_strchr(str, search) - str);
-        printf("'%c' found: %ld\n", search, strchr(str, search) - str);
-    } 
-    else 
-    {
-        printf("'%c' not found.\n", search);
-    }
+	if (((ft_strchr(str, search)) != NULL) && ((strchr(str, search)) != NULL))
+	{
+		printf("'%c' found: %ld\n", search, ft_strchr(str, search) - str);
+		printf("'%c' found: %ld\n", search, strchr(str, search) - str);
+	}
+	else
+	{
+		printf("'%c' not found.\n", search);
+	}
 } */

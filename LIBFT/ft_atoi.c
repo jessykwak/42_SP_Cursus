@@ -1,18 +1,20 @@
 #include "libft.h"
+
 // #include <stdio.h>
 
-int ft_atoi(const char *nptr)
+int	ft_atoi(const char *nptr)
 {
-	int index;
-	int sign;
-	int num;
+	int	index;
+	int	sign;
+	int	num;
 
 	sign = 1;
 	index = 0;
 	num = 0;
 	if (nptr[0] == '\0')
 		return (0);
-	while (nptr[index] == ' ' || nptr[index] == '\n' || nptr[index] == '\t' || nptr[index] == '\v' || nptr[index] == '\f' || nptr[index] == '\r')
+	while (nptr[index] == ' ' || nptr[index] == '\n' || nptr[index] == '\t'
+		|| nptr[index] == '\v' || nptr[index] == '\f' || nptr[index] == '\r')
 		index++;
 	if (nptr[index] == '-' || nptr[index] == '+')
 	{
