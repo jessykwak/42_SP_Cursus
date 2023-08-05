@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 20:54:08 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/03 23:58:27 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/04 22:08:20 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,8 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 	size_t	count;
 
 	index = 0;
+	if (!dst || !src)
+		return (0);
 	while (dst[index] != '\0')
 		index++;
 	lendest = index;

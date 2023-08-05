@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 21:11:42 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/04 00:36:28 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/04 19:47:29 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,6 +39,5 @@ char	*ft_strnstr(const char *big, const char *little, size_t len);
 char	*ft_strrchr(const char *s, int c);
 int		ft_tolower(int c);
 int		ft_toupper(int c);
-char	*ft_substr(char const *s, unsigned int start, size_t len);
 
 #endif

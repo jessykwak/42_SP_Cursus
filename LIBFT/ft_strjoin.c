@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/08/04 20:13:08 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/08/04 21:40:57 by jmin-kwa         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strjoin(char const *s1, char const *s2)
@@ -6,10 +18,8 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	size_t	len2;
 	char	*str;
 
-	while (s1[len] != '\0')
-		len++;
-	while (s2[len2] != '\0')
-		len2++;
+	len = ft_strlen(s1);
+	len2 = ft_strlen(s2);
 	str = (char *)malloc((len + len2 + 1) * sizeof(char));
 	if (str == NULL)
 		return (NULL);
@@ -29,7 +39,9 @@ char	*ft_strjoin(char const *s1, char const *s2)
 	return (str);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
 	const char	*str1 = "Hello, ";
 	const char	*str2 = "world!";
