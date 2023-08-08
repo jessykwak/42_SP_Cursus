@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strlcat.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 20:54:08 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/04 22:08:20 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/07 22:22:48 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,22 +14,18 @@
 
 size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
+	size_t	lensrc;
 	size_t	lendest;
 	size_t	index;
-	size_t	count;
 
 	index = 0;
+	lensrc = ft_strlen(src);
+	lendest = ft_strlen(dst);
 	if (!dst || !src)
-		return (0);
-	while (dst[index] != '\0')
-		index++;
-	lendest = index;
+		return (lendest + lensrc);
 	if (size <= lendest)
 	{
-		count = 0;
-		while (src[count] != '\0')
-			count++;
-		return (size + count);
+		return (lensrc + size);
 	}
 	index = 0;
 	while (((lendest + index) < (size - 1)) && src[index] != '\0')
@@ -38,7 +34,7 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 		index++;
 	}
 	dst[lendest + index] = '\0';
-	return (lendest + index);
+	return (lendest + lensrc);
 }
 
 /* #include <stdio.h>

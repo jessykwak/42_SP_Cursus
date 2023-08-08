@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:01:35 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/04 19:46:28 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/07 22:42:37 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,15 +21,13 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	str = ((unsigned char *)s);
 	search = ((unsigned char)c);
 	count = 0;
-	while (str[count] != '\0' && (count < n))
+	while (count < n)
 	{
 		if (str[count] == search)
-			break ;
+			return (&str[count]);
 		count++;
 	}
-	if (str[count] != search)
-		return (NULL);
-	return (&str[count]);
+	return (NULL);
 }
 
 /* #include <stdio.h>

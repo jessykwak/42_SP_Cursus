@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/07/24 22:09:50 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/07 23:02:01 by jessk            ###   ########.fr       */
+/*   Created: 2023/08/08 00:13:14 by jessk             #+#    #+#             */
+/*   Updated: 2023/08/08 00:20:23 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,20 +28,12 @@ char	*ft_strchr(const char *s, int c)
 	return (str);
 }
 
-/* #include <stdio.h>
-
-int main (void)
+char	**ft_split(char const *s, char c)
 {
-	const char *str = "Hello, World!";
-	char search = '@';
+	int	pos;
 
-	if (((ft_strchr(str, search)) != NULL) && ((strchr(str, search)) != NULL))
-	{
-		printf("'%c' found: %ld\n", search, ft_strchr(str, search) - str);
-		printf("'%c' found: %ld\n", search, strchr(str, search) - str);
-	}
-	else
-	{
-		printf("'%c' not found.\n", search);
-	}
-} */
+	pos = 0;
+	while (ft_strchr(s, c))
+	pos++;
+	
+}

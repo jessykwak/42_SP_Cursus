@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:00:45 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/04 19:47:15 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/07 22:33:48 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,12 +24,12 @@ char	*ft_strrchr(const char *s, int c)
 	while (len >= 0)
 	{
 		if (str[len] == c)
-			break ;
+			return (str + len);
 		len--;
 	}
 	if (str[len] != c)
 		return (NULL);
-	return (str + len);
+	return (NULL);
 }
 
 /* #include <stdio.h>
