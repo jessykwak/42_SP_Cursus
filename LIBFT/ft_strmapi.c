@@ -6,7 +6,7 @@
 /*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/14 01:06:39 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/14 01:45:39 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/15 01:20:35 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,8 +14,8 @@
 /* #include <stdio.h>
 #include <stdlib.h>
 
-size_t	ft_strlen(const char *s); */
-
+size_t	ft_strlen(const char *s);
+ */
 char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
 	char	*str;
@@ -42,11 +42,11 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 {
     if (index % 2 == 0)
     {
-        return (c >= 'a' && c <= 'z' ? c - ('a' - 'A') : c);
+        return (c >= 'a' && c <= 'z' ? c - 32 : c);
     }
     else
     {
-        return (c >= 'A' && c <= 'Z' ? c + ('a' - 'A') : c);
+        return (c >= 'A' && c <= 'Z' ? c + 32 : c);
     }
 }
 
@@ -57,16 +57,8 @@ int	main(void)
 
 	original = "Hello, World!";
 	modified = ft_strmapi(original, test_function);
-	if (modified)
-	{
-		printf("Original: %s\n", original);
-		printf("Modified: %s\n", modified);
-		free(modified);
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-	return (0);
+	printf("Original: %s\n", original);
+	printf("Modified: %s\n", modified);
+	free(modified);
 }
  */

@@ -1,42 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striteri.c                                      :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/14 01:45:54 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/15 01:18:12 by jessk            ###   ########.fr       */
+/*   Created: 2023/08/15 01:28:51 by jessk             #+#    #+#             */
+/*   Updated: 2023/08/15 01:34:08 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-/* #include <stdio.h> */
 
-void	ft_striteri(char *s, void (*f)(unsigned int, char *))
+void	ft_putstr_fd(char *s, int fd)
 {
-	unsigned int	index;
+	size_t	index;
 
 	index = 0;
-	while (s[index] != '\0')
+	if (s != NULL)
 	{
-		f(index, &s[index]);
-		index++;
+		while (s[index] != '\0')
+		{
+			write(fd, &s[index], 1);
+			index ++;
+		}
 	}
 }
 
-/* void	testing_func(unsigned int index, char *c)
+/* int	main(void)
 {
-	if (c[index] >= 'a' && c[index] <= 'z')
-		c[index] -= 32;
-}
+	char	*str;
 
-int	main(void)
-{
-	char	str[] = "Hello Wordl";
-
-	printf("original: %s\n", str);
-	ft_striteri(str, testing_func);
-	printf("modified: %s\n", str);
+	str = "Hello world";
+	ft_putstr_fd(str, 1);
 	return (0);
 } */
