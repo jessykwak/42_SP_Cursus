@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memcpy.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 20:47:01 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/04 19:46:34 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/17 01:35:38 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 	dest_a = dest;
 	src_a = src;
 	count = 0;
+	if (!dest && !src)
+		return (NULL);
 	while (count < n)
 	{
 		dest_a[count] = src_a[count];

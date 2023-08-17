@@ -6,7 +6,7 @@
 /*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/09 01:32:53 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/14 01:05:23 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/17 02:21:59 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,9 +38,7 @@ char	*ft_itoa(int n)
 
 	nbr = n;
 	size = num_length(nbr);
-	if (nbr > 0)
-		nbr *= 1;
-	else
+	if (nbr < 0)
 		nbr = nbr * (-1);
 	str = (char *)malloc(size + 1);
 	if (!(str))

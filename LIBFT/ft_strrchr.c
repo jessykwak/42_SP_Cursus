@@ -6,7 +6,7 @@
 /*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:00:45 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/07 22:33:48 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/17 01:47:21 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,12 +23,12 @@ char	*ft_strrchr(const char *s, int c)
 		len++;
 	while (len >= 0)
 	{
-		if (str[len] == c)
+		if (str[len] == (char)c)
 			return (str + len);
 		len--;
 	}
-	if (str[len] != c)
-		return (NULL);
+	if (str[len] == (char)c)
+		return (str + len);
 	return (NULL);
 }
 

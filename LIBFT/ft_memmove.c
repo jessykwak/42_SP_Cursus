@@ -6,7 +6,7 @@
 /*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 20:48:12 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/07 21:55:50 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/17 01:35:40 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,27 @@
 
 void	*ft_memmove(void *dst, const void *src, size_t n)
 {
-	char		*dst_a;
 	const char	*src_a;
+	char		*dst_a;
+	size_t		index;
 
-	dst_a = dst;
-	src_a = src;
-	if (dst_a > src_a && dst_a < src_a + n)
+	src_a = (const char *)src;
+	dst_a = (char *)dst;
+	if (!dst && !src)
+		return (NULL);
+	if (src_a < dst_a)
 	{
-		dst_a += n;
-		src_a += n;
-		while (n > 0)
-		{
-			*(--dst_a) = *(--src_a);
-			n--;
-		}
+		index = n;
+		while (index--)
+			dst_a[index] = src_a[index];
 	}
 	else
 	{
-		while (n > 0)
+		index = 0;
+		while (index < n)
 		{
-			*dst_a++ = *src_a++;
-			n--;
+			dst_a[index] = src_a[index];
+			index++;
 		}
 	}
 	return (dst);
@@ -44,14 +44,11 @@ void	*ft_memmove(void *dst, const void *src, size_t n)
 
 int	main(void)
 {
-	char	source[];
-	char	destination[];
+	char	source[] = "Hello, World!";
+	char	destination[] = "Hello, Universe!";
 
-	source[] = "Hello, World!";
-	destination[] = "Hello, Universe!";
 	ft_memmove(destination + 16, source + 6, 7);
 	printf("Source: %s\n", source);
 	printf("Destination: %s\n", destination);
 	return (0);
-}
- */
+} */
