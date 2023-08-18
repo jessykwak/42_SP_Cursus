@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: jessk <jessk@student.42.fr>                +#+  +:+       +#+         #
+#    By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/24 22:24:08 by jmin-kwa          #+#    #+#              #
-#    Updated: 2023/08/17 01:35:56 by jessk            ###   ########.fr        #
+#    Updated: 2023/08/17 23:34:07 by jmin-kwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,9 +26,11 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 
 OBJ_FILES = ${SRC:%.c=%.o}
 
+HEADER = libft.h
+
 all: ${NAME}
 
-%.o: %.c
+%.o: %.c ${HEADER}
 	${CC} ${CFLAGS} -c $< -o $@
 
 ${NAME}: ${OBJ_FILES}
@@ -38,7 +40,9 @@ ${NAME}: ${OBJ_FILES}
 clean:
 	rm -f ${OBJ_FILES}
 
-fclean:
+fclean: clean
 	rm -f ${NAME}
 
 re: fclean all
+
+.PHONY:		all clean fclean re

@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_split.c                                         :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/08 00:13:14 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/09 01:32:50 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/18 00:17:47 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,84 +15,69 @@
 static int	word_counter(const char *str, char c)
 {
 	int	i;
-	int	trigger;
+	int	words;
 
 	i = 0;
-	trigger = 0;
-	while (*str)
+	words = 0;
+	while (str[i] != '\0')
 	{
-		if (*str != c && trigger == 0)
-		{
-			trigger = 1;
+		if (str[i] == c)
 			i++;
+		else
+		{
+			while (str[i] != c && str[i] != '\0')
+				i++;
+			words++;
 		}
-		else if (*str == c)
-			trigger = 0;
-		str++;
 	}
-	return (i);
+	return (words);
 }
 
-static char	*word_duplicator(const char *str, int start, int finish)
+static int	word_len(const char *str, char c)
 {
-	char	*word;
-	int		i;
+	int	len;
 
-	i = 0;
-	word = malloc((finish - start + 1) * sizeof(char));
-	while (start < finish)
-		word[i++] = str[start++];
-	word[i] = '\0';
-	return (word);
+	len = 0;
+	while (str[len] != c)
+	{
+		len++;
+	}
+	return (len);
 }
 
 char	**ft_split(char const *s, char c)
 {
-	size_t	finish;
-	size_t	pos;
-	int		start;
+	int		pos;
+	int		index;
 	char	**str;
 
-	str = malloc((word_counter(s, c) + 1) * sizeof(char *));
+	str = (char **)malloc((word_counter(s, c)) * sizeof(char *));
 	if (!s || !str)
-		return (0);
-	finish = 0;
+		return (NULL);
 	pos = 0;
-	start = -1;
-	while (finish <= ft_strlen(s))
+	index = 0;
+	while (s[index] != '\0')
 	{
-		if (s[finish] != c && start < 0)
-			start = finish;
-		else if ((s[finish] == c || finish == ft_strlen(s)) && start >= 0)
+		if (s[index] == c)
+			index++;
+		else if (s[index] != c && s[index] != '\0')
 		{
-			str[pos++] = word_duplicator(s, start, finish);
-			start = -1;
+			str[pos] = ft_substr(s, index, word_len(&s[index], c));
+			index = index + word_len(&s[index], c);
+			pos++;
 		}
-		finish++;
 	}
-	str[pos] = '\0';
 	return (str);
 }
 
-/* int	main(void)
+/* #include <stdio.h>
+
+int	main(void)
 {
-	char const *input = "lorem ipsum dolor sit amet";
-	char delimiter = ' ';
-	char **split_result = ft_split(input, delimiter);
-
-	if (split_result)
-	{
-		for (int i = 0; split_result[i] != NULL; i++)
-		{
-			printf("[%d]: %s\n", i, split_result[i]);
-			free(split_result[i]);
-		}
-		free(split_result);
-	}
-	else
-	{
-		printf("Memory allocation failed.\n");
-	}
-
+	ft_split("lorem ipsum dolor sit amet,
+		consectetur adipiscing elit. Sed non risus. Suspendisse lectus tortor,
+		dignissim sit amet, adipiscing nec, ultricies sed,
+		dolor. Cras elementum ultricies diam. Maecenas ligula massa, varius a,
+		semper congue, euismod non, mi.", 'i');
 	return (0);
 } */
