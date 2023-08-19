@@ -6,9 +6,11 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:01:05 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/04 22:04:31 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:26:22 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Compares only the the first 'n' bytes of strings 's1' and 's2'.
 
 #include "libft.h"
 

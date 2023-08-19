@@ -6,9 +6,12 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:02:46 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/04 19:46:10 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/19 19:11:47 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Allocate memory for an array of 'nmemb' elements of 'size' bytes.
+//Returns a pointer to the allocated memory.
 
 #include "libft.h"
 
@@ -25,7 +28,7 @@ void	*ft_calloc(size_t nmemb, size_t size)
 		return (NULL);
 	else
 	{
-		while (total > 0)
+		while (total)
 		{
 			*ptr++ = 0;
 			total--;

@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:00:45 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/17 01:47:21 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/19 19:28:39 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Returns a pointer to the first occurence of 'c' in the string 's'
 
 #include "libft.h"
 
@@ -18,17 +20,13 @@ char	*ft_strrchr(const char *s, int c)
 	int		len;
 
 	str = (char *)s;
-	len = 0;
-	while (str[len] != '\0')
-		len++;
+	len = ft_strlen(s);
 	while (len >= 0)
 	{
 		if (str[len] == (char)c)
 			return (str + len);
 		len--;
 	}
-	if (str[len] == (char)c)
-		return (str + len);
 	return (NULL);
 }
 
