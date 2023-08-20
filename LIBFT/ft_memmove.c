@@ -3,12 +3,17 @@
 /*                                                        :::      ::::::::   */
 /*   ft_memmove.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 20:48:12 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/17 01:35:40 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/19 23:08:10 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Copies 'n' bytes from 'src' to 'dst'
+//If src_a mem address < dst_a mem address, it means there is a 
+//chance of overlapping hence, copying src's from the end to the start
+//Else, can copy normaly from start to end.
 
 #include "libft.h"
 

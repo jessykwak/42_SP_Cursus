@@ -3,78 +3,48 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strtrim.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 19:51:13 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/08 00:14:18 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/19 23:02:13 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+//Trims the contents of 'set' of the beggining and ending of the string 's1'
+
 #include "libft.h"
 
-/* size_t	ft_strlen(const char *s)
-{
-	size_t	i;
-
-	i = 0;
-	while (s[i] != '\0')
-		i++;
-	return (i);
-}
-
-char	*ft_strchr(const char *s, int c)
-{
-	char	*str;
-
-	str = (char *)s;
-	while (*str)
-	{
-		if (*str == c)
-			break ;
-		str++;
-	}
-	if (*str != c)
-		return (NULL);
-	return (str);
-}
- */
 char	*ft_strtrim(char const *s1, char const *set)
 {
-	char	*str;
-	int		index;
-	int		start;
-	int		end;
+	int		len;
+	char	*trimmed;
 
-	if (!s1 || !set)
+	while (*s1 && ft_strchr(set, *s1))
+		s1++;
+	if (*s1 == '\0')
+		return (ft_calloc(1, sizeof(char)));
+	len = ft_strlen(s1);
+	while (ft_strrchr(set, s1[len]))
+		len--;
+	trimmed = ft_calloc((len + 2), sizeof(char));
+	if (!trimmed)
 		return (NULL);
-	start = 0;
-	end = ft_strlen(s1);
-	while (s1[start] != '\0' && ft_strchr(set, s1[start]))
-		start++;
-	while ((end > start) && ft_strchr(set, s1[end]))
-		end--;
-	str = (char *)malloc(((end - start) + 2) * sizeof(char));
-	if (str == NULL)
-		return (NULL);
-	index = 0;
-	while (start <= end)
-		str[index++] = s1[start++];
-	str[index] = '\0';
-	return (str);
+	ft_strlcpy(trimmed, s1, len + 2);
+	return (trimmed);
 }
 
-/* #include <stdio.h>
+// #include <stdio.h>
 
-int	main(void)
-{
-	char	s1[] = "lost my cool";
-	char	*strtrim;
+// int	main(void)
+// {
+// 	char	s1[] = "lost my cool";
+// 	char	*strtrim;
 	
-	if (!(strtrim = ft_strtrim(s1, "lo")))
-		printf("NULL");
-	else
-		printf("%s", strtrim);
-	if (strtrim == s1)
-		printf("\nA new string was not returned");
-}
- */
+// 	if (!(strtrim = ft_strtrim(s1, "lo")))
+// 		printf("NULL");
+// 	else
+// 		printf("%s", strtrim);
+// 	if (strtrim == s1)
+// 		printf("\nA new string was not returned");
+// }
+// 

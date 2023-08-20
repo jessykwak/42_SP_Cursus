@@ -3,12 +3,15 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strnstr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:00:49 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/07 23:12:24 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/19 23:01:17 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//Locates the first ocurrence of substring 'little' in the string 'big', 
+//searching thru 'len' size of the string 'big'
 
 #include "libft.h"
 

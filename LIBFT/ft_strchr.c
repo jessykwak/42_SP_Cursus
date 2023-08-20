@@ -3,12 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 22:09:50 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/17 01:54:33 by jessk            ###   ########.fr       */
+/*   Updated: 2023/08/19 23:03:18 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+//searches the first ocurrence 'c' in the string 's'
 
 #include "libft.h"
 
