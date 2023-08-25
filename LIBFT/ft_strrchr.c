@@ -3,14 +3,14 @@
 /*                                                        :::      ::::::::   */
 /*   ft_strrchr.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/08/04 00:00:45 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/19 19:28:39 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/08/21 20:53:58 by jessk            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-//Returns a pointer to the first occurence of 'c' in the string 's'
+//Returns a pointer to the last occurence of 'c' in the string 's'
 
 #include "libft.h"
 
