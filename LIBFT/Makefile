@@ -6,7 +6,7 @@
 #    By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/24 22:24:08 by jmin-kwa          #+#    #+#              #
-#    Updated: 2023/08/17 23:34:07 by jmin-kwa         ###   ########.fr        #
+#    Updated: 2023/09/11 20:58:15 by jmin-kwa         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -24,21 +24,29 @@ SRC = ft_isalpha.c ft_isdigit.c ft_isalnum.c ft_isascii.c ft_isprint.c \
 	ft_strtrim.c ft_split.c ft_itoa.c ft_strmapi.c ft_striteri.c \
 	ft_putchar_fd.c ft_putstr_fd.c ft_putendl_fd.c ft_putnbr_fd.c
 
+BONUS_SRC = ft_lstnew.c ft_lstadd_front.c ft_lstsize.c ft_lstadd_back.c \
+			ft_lstlast.c ft_lstdelone.c
+
 OBJ_FILES = ${SRC:%.c=%.o}
+
+BONUS_OBJ = ${BONUS_SRC:%.c=%.o}
 
 HEADER = libft.h
 
 all: ${NAME}
 
+bonus: ${BONUS_OBJ}
+
 %.o: %.c ${HEADER}
 	${CC} ${CFLAGS} -c $< -o $@
-
-${NAME}: ${OBJ_FILES}
-	ar rc ${NAME} ${OBJ_FILES}
+	ar rc ${NAME} $@
 	ranlib ${NAME}
 
+
+${NAME}: ${OBJ_FILES}
+
 clean:
-	rm -f ${OBJ_FILES}
+	rm -f ${OBJ_FILES} ${BONUS_OBJ}
 
 fclean: clean
 	rm -f ${NAME}

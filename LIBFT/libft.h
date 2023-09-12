@@ -3,24 +3,24 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/07/24 21:11:42 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/08/21 21:24:27 by jessk            ###   ########.fr       */
+/*   Updated: 2023/09/11 21:23:11 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef LIBFT_H
 # define LIBFT_H
 
-//HEADERS
+// HEADERS
 
 # include <limits.h>
 # include <stdlib.h>
 # include <string.h>
 # include <unistd.h>
 
-//STRUCT DECLARATION
+// STRUCT DECLARATION
 
 typedef struct s_list
 {
@@ -28,7 +28,7 @@ typedef struct s_list
 	struct s_list	*next;
 }					t_list;
 
-//PROTOTYPES
+// PROTOTYPES
 
 int					ft_isalpha(int c);
 int					ft_isdigit(int c);
@@ -66,6 +66,17 @@ void				ft_putstr_fd(char *s, int fd);
 void				ft_putendl_fd(char *s, int fd);
 void				ft_putnbr_fd(int n, int fd);
 
-//PROTOTYPES (BONUS)
+//BONUS
+
+t_list				*ft_lstnew(void *content);
+void				ft_lstadd_front(t_list **lst, t_list *new);
+int					ft_lstsize(t_list *lst);
+t_list				*ft_lstlast(t_list *lst);
+void				ft_lstadd_back(t_list **lst, t_list *new);
+void				ft_lstdelone(t_list *lst, void (*del)(void *));
+void				ft_lstclear(t_list **lst, void (*del)(void *));
+void				ft_lstiter(t_list *lst, void (*f)(void *));
+t_list				*ft_lstmap(t_list *lst, void *(*f)(void *),
+						void (*del)(void *));
 
 #endif

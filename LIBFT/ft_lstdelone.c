@@ -1,31 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back_bonus.c                             :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jessk <jessk@student.42.fr>                +#+  +:+       +#+        */
+/*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/08/24 22:02:23 by jessk             #+#    #+#             */
-/*   Updated: 2023/08/24 22:34:13 by jessk            ###   ########.fr       */
+/*   Created: 2023/09/11 19:51:56 by jmin-kwa          #+#    #+#             */
+/*   Updated: 2023/09/11 21:14:34 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-void	ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-	t_list	*aux;
-
-	while (*lst == NULL)
-	{
-		*lst = new;
+	if (!lst || !del)
 		return ;
-	}
-	aux = *lst;
-	while (aux->next != NULL)
-	{
-		aux = aux->next;
-	}
-	aux->next = new;
-	new->next = NULL;
+	del (lst->content);
+	free (lst);
 }
+
+// #include "libft.h"
+
+// void	ft_lstdelone(t_list *lst, void (*del)(void *))
+// {
+// 	if (!lst)
+// 		return ;
+// 	del(lst->content);
+// 	free(lst);
+// }
