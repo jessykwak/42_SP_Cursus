@@ -6,7 +6,7 @@
 /*   By: jmin-kwa <jmin-kwa@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/09/11 21:02:35 by jmin-kwa          #+#    #+#             */
-/*   Updated: 2023/09/11 21:21:29 by jmin-kwa         ###   ########.fr       */
+/*   Updated: 2023/09/11 21:29:25 by jmin-kwa         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
-	t_list *aux;
+	t_list	*aux;
 
 	if (!lst || !del)
 		return ;
